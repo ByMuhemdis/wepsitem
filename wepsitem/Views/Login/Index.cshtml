@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin panel login</title>
+    <link rel="stylesheet" href="~/web-web login/style.Css">
+</head>
+<body>
+
+    <div class="container">
+        <!--butun kolarıma yazacak bir div olusturdum-->
+
+        <div class="contact-img">
+            <img src="~/web-web login/indir.png" class="admin">
+            <h2>Admin Login</h2>
+          @using (Html.BeginForm("Index","Login",FormMethod.Post))
+          {
+
+                <div class="textwrite">
+                    <input type="text" name="kullaniciadi" placeholder="Username">
+                </div>
+                <div class="textwrite">
+                    <input type="password" name="sifre" placeholder="Password">
+                </div>
+                <div>
+                    <input type="submit" class="logbtn" value="Login">
+                </div>
+
+
+          }
+
+           
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>

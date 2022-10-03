@@ -1,0 +1,53 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!--aşagıdaki kodları biz w3scolls dan bars yapısına örnek olam kodu alarak işlemimizi devaM ETTİRMEKTEYİZ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--bu bootsrapscnd linkini internetten bootstrapcdn yaparak siteden indirdim-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+
+
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+        <h3 class="w3-bar-item">Admin Panel</h3>
+        <a href="/admin/Index" class="w3-bar-item w3-button">Ana Sayfa</a>
+        <a href="/admin/iconlarim" class="w3-bar-item w3-button">Iconlar</a>
+        <a href="/anasayfa/Index" target="_blank" class="w3-bar-item w3-button btn btn-info">siteye Git</a>
+        <!--ana sayfaya git dedgimizde ikinci bir sekmeden yönlendirme yapmak istedigimizden dolayı bunu  target="_blank" css komutunu yazdık -->
+        <a href="/Login/cıkısyap" class="w3-bar-item w3-button btn btn-danger">Çıkış Yap</a>
+
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:25%">
+
+        <div class="w3-container "  style="background-image: linear-gradient(120deg, #3498db, #8e44ad)" ;>
+            <h1 style="color:white;">kişisel web sitesi</h1>
+        </div>
+
+     
+
+        <div class="w3-container">
+            <!--burada demek istedigimin layout kısmı sabit kalsın ama bu kısımdaki degişiklikleri uygula -->
+           @RenderBody()
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+﻿@model wepsitem.Models.siniflar.anasayfa
+@{
+    ViewBag.Title = "anasayfagetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">Anasayfa Güncelle</h2>
+<hr />
+
+@using (Html.BeginForm("anasayfaguncelle", "admin", FormMethod.Post , new {enctype="multipart/form-data"}))
+
+{
+
+
+    @Html.LabelFor(m => m.id);
+    @Html.TextBoxFor(m => m.id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <br />
+    @Html.LabelFor(m => m.isim);
+    @Html.TextBoxFor(m => m.isim, new { @class = "form-control" })
+    <br />
+    <br />
+    @*@Html.LabelFor(m => m.profil)
+    @Html.TextBoxFor(m => m.profil, new { @class = "form-control" })*@
+    <input  type="file" name="profil" />
+   
+    <br />
+    <br />
+    @Html.LabelFor(m => m.acıklama)
+    @Html.TextAreaFor(m => m.acıklama, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.LabelFor(m => m.iletisim)
+    @Html.TextBoxFor(m => m.iletisim, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.LabelFor(m => m.unvan)
+    @Html.TextBoxFor(m => m.unvan, new { @class = "form-control" })
+    <br />
+    <br />
+    <button  class="btn btn-success">Anasayfa Güncelle</button>
+
+}
+
+
+
+
+
+
+
+
+
+
+

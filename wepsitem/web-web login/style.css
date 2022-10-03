@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family:sans-serif;
+    box-sizing:border-box;
+   
+}
+h2{
+    text-align: center;
+}
+body{
+    background-image: linear-gradient(120deg, #3498db , #8e44ad);
+    min-height: 100vh;
+   
+}
+.container{
+    width:400px;
+    background-color: #f1f1f1;
+    height:600px;
+    padding: 80px 40px;
+    border-radius: 10px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);/*tam ortaya hizalamak istiyoruz */
+
+}
+
+.textwrite{
+
+    border-bottom: 2px solid #adadad;  
+    position: relative;
+    margin: 28px 0;
+  
+}
+.textwrite input{
+
+    font-size: 15px;
+    color:#333;
+    border:none;
+    width:100%;
+    outline: none;
+    background:none;
+    padding: 0 5px;
+    height: 40px;
+    
+}
+img.admin{
+
+  
+    margin-left: 75px;
+    margin-bottom: 30px;
+    height: 175px;
+    width: 175px;
+    display: block;
+    background: black;
+    border-radius: 25%;
+    
+
+
+}
+.logbtn{
+
+    display: block;
+    width: 100%;
+    height: 50px;
+    border:none;
+    background-image: linear-gradient(120deg, #3498db, #8e44ad,  #3498db );
+    background-size:200%;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border-radius:10px;
+    transition:4s ;
+   
+}
+.logbtn:hover{
+
+    background-position: right;
+}

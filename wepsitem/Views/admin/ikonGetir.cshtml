@@ -1,0 +1,26 @@
+﻿@model wepsitem.Models.siniflar.iconlar
+@{
+    ViewBag.Title = "ikonGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>ikon Güncelle</h2>
+
+<br />
+
+@using (Html.BeginForm("ikonGuncelle", "admin", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.id)
+    @Html.TextBoxFor(m => m.id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(m => m.icon)
+    @Html.TextBoxFor(m => m.icon, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.link)
+    @Html.TextBoxFor(m => m.link, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">İkon Güncelle</button>
+
+
+}
+

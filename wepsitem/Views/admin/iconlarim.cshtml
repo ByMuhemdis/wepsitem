@@ -1,0 +1,38 @@
+﻿@using wepsitem.Models.siniflar
+@model List<iconlar>
+
+    @{
+        ViewBag.Title = "iconlarim";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+  
+
+
+<h2 class="mb-4">icon Sayfası</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>İCon</th>
+        <th>Güncelle</th>
+        <th>sil</th>
+
+    </tr>
+
+    @foreach (var gel in Model)
+    {
+        <tr>
+            <td>@gel.id</td>
+            <td><i class="@gel.icon"></i></td> <!--burada i çğinde clas olusturmamızın sebebi diger türlü link halinde yani ikonon kodu halinde geliyor bu sekilde görselde gelmiş oluyor-->
+            <td><a href="/admin/ikonsil/@gel.id" class="btn btn-primary">Sil</a></td>
+            <td><a href="/admin/ikonGetir/@gel.id" class="btn btn-danger">Güncelle</a></td>
+
+        </tr>
+    }
+
+</table>
+
+<a href="/admin/YeniIkon" class="btn btn-warning">Yeni icon Ekle</a>
+

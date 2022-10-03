@@ -1,0 +1,55 @@
+﻿@using wepsitem.Models.siniflar
+@model List<anasayfa>
+@{
+    Layout = null;
+}
+@*yukarıdaki işlemle anasayfa kısmındaki sql den veriyi cekmektir cumku sql ile baglantıyı
+        anasayfa olusturmaktadır
+    Bu projede HTML-CSS-BOOTSTRAP-ASP.NET.MVC-CODE-FİRST YAPILARI KULLANILMISTIR -*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kisisel web sitesi</title>
+    <link  rel="stylesheet"  href="~/web-kişisel web sitesi/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+</head>
+
+
+<body>
+    @*avatar= resmin oldugu yer---center= merkez div---kontent = içerik -*@
+    <div class="center">
+        <div class="avatar">
+            @foreach (var x in Model)
+            {
+                <img src="@x.profil" />
+            }
+        </div>
+        <div class="content">
+            @*buradada foreach acarak sql  veri tabanındaki bilgileri anasayfa==model (yukarıda anasayfaya model ismi verdik) üzerinden cekerek belirtilen kısımlara yazdırdık burada amac
+                guncellemeyi sql  veri tabanı uzerinden yapsak bilene anında tepki alarak site üzerine uygulsnmsdını saglamak -
+                buradaki işlemlerimiz bittikten sonra  CONTROLLERS(anasayfa) KISMINDA yukarda olan using wepsitem.Models.siniflar kısmını kutuphane olarak ekliyoruz işlemlerin acıklaması anasayfacon. kısmında*@
+            @foreach (var x in Model)
+            {
+                <h1>@x.isim</h1>
+                <H2>@x.unvan</H2>
+                <P>
+                    @x.acıklama
+                </P>
+                <H3>@x.iletisim</H3>
+
+            }
+            @*iconlar için gittigimiz ve yardım aldıgımız site "fontawesome cdn" sitesi
+                ikonlar kısmını kesip iconlar.cshtml sayfasına tasındı o sayfa ile baglantı kurmak için asagıdaki işlemi yapıyoruz yani o sayfadaki icanları buraya yansıt diyoruz*@
+            @Html.Action("ikonlar", "anasayfa")
+
+
+        </div>
+
+
+    </div>
+</body>
+</html>

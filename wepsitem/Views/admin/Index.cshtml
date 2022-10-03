@@ -1,0 +1,36 @@
+﻿ @using wepsitem.Models.siniflar;
+@model List<anasayfa>
+ @{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!--burada ekle sil güncelleme yapabilmek için sql dan veri çekmemiz gerek ve burada sql den veri çekebilmek için tablo oluşturuyoruz-->
+<h2 class="mb-4">Ana Sayfa</h2>
+<table class="table table-bordered mt-3 ">
+
+    <tr>
+        <th>ID</th>
+        <th>İSİM</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach (var gel in Model)
+         {
+
+            <tr>
+                <td>@gel.id</td>
+                <td>@gel.isim</td>
+
+                <td><a href="/admin/Sil/@gel.id" class="btn btn-danger">Sİl</a></td>
+               
+
+                <td><a href="/admin/anasayfagetir/@gel.id" class=" btn btn-info">güncelle</a></td>
+
+            </tr>
+
+         }
+
+    </tbody>
+</table>

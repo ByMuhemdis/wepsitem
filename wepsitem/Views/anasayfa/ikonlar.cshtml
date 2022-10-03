@@ -1,0 +1,14 @@
+﻿@using wepsitem.Models.siniflar
+@model List<iconlar>
+
+
+<div class="social">
+
+    @foreach (var x in Model)
+    {
+        <a href="@x.link"><i class="@x.icon"></i> </a>
+
+    }
+
+
+</div>
